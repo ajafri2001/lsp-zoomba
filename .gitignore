@@ -1,8 +1,10 @@
 # SBT-specific files
 target/
 project/target/
+.bloop/
 
 # metals files
 .bsp/
 .metals/
+*metals.sbt
 
