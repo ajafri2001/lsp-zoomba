@@ -1,23 +1,17 @@
 package lsp
 
 import io.circe._, io.circe.parser._
+import rpc.encodeMessage
 
 object Main {
-    def main(args: Array[String]): Unit =
-        println("Hello World")
-        println(encodeMessage())
-
-    def encodeMessage(): Json =
-        val testJson: String =
-            """
-            {
-              "hello" : 123
-            }
-            """.stripMargin
-        val result: Either[ParsingFailure, Json] = parse(testJson)
-
-        result match
-            case Right(json) => json
-            case Left(value) =>
-                throw new IllegalArgumentException("You are doomed")
+    def main(args: Array[String]): Unit = println(
+      encodeMessage(
+        Array[Byte](123, 34, 110, 97, 109, 101, 34, 58, 32, 34, 65, 97, 115,
+          104, 114, 105, 116, 104, 34, 44, 32, 34, 108, 111, 99, 97, 116, 105,
+          111, 110, 34, 58, 32, 34, 65, 110, 100, 104, 114, 97, 32, 80, 114, 97,
+          100, 101, 115, 104, 34, 44, 32, 34, 102, 105, 101, 108, 100, 34, 58,
+          32, 34, 67, 121, 98, 101, 114, 115, 101, 99, 117, 114, 105, 116, 121,
+          34, 125)
+      )
+    )
 }
