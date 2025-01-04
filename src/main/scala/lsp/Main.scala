@@ -1,4 +1,4 @@
-package server
+package lsp
 
 object Main {
   def main(args : Array[String]) : Unit = 
