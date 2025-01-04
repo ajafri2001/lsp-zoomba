@@ -1,0 +1,8 @@
+# SBT-specific files
+target/
+project/target/
+
+# metals files
+.bsp/
+.metals/
+
