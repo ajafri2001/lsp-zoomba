@@ -9,3 +9,5 @@ def encodeMessage(msg: Array[Byte]): String =
         case Right(json) => json.toString()
         case Left(error) =>
             throw new IllegalArgumentException("This is doomed")
+
+def decodeMessage = ???
