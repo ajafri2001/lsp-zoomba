@@ -2,6 +2,7 @@ package lsp
 
 import log.Logger
 import scala.io.Source
+import io.circe._, io.circe.parser._
 
 // TODO-
 
@@ -17,14 +18,16 @@ case class RequestMessage(
 // Testing to see if local vim client can send errors and panic
 object Main {
     def main(args: Array[String]): Unit =
-        // val input = Source.stdin.getLines().mkString("\n")
-        // Logger.write(input)
+        val input = Source.stdin.getLines().mkString
+        val contentLength = """\d+""".r.findFirstIn(input)
+        val messageStart = input.indexOf("\r\n\r\n") + 4
 
-        val regexMatch = """Content-Length:(\d+)\r\n""".r
+        val rawMessage: String =
+            input.slice(messageStart, messageStart + contentLength.get.toInt)
 
-        // random json string to test regex
+        Logger.write(input)
 
-        val input =
-            "Content-Length:123\r\n\r\n{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"textDocument/completion\",\"params\":{\"key\":\"value\"}}"
-        print(regexMatch.findFirstIn(input))
+        val message = parse(rawMessage).getOrElse(
+          "Problem unwrapping message from raw message"
+        )
 }
