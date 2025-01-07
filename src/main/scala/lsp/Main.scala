@@ -10,23 +10,13 @@ import lsp.methods.initialize
 
 // TODO-
 
-sealed trait Message:
+trait Message:
     def jsonrpc: String = "2.0"
-
-type LSPAny =
-    InitializeResult | String | Int | BigInt | BigDecimal | Boolean |
-        Null // Needs lists and maps
 
 case class RequestMessage(
     id: Int, // ideally Int | String type as formal specification dictates
     method: String,
     params: Option[Json] = None
-) extends Message
-
-case class ResponseMessage(
-    id: Int,
-    result: LSPAny
-    // error: Null
 ) extends Message
 
 // Testing to see if local vim client can send errors and panic

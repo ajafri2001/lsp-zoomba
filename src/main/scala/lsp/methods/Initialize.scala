@@ -14,10 +14,10 @@ case class ServerCapabilities(
 
 case class ServerInfo(name: String, version: String)
 
-def initialize(message: RequestMessage): InitializeResult =
+def initialize(message: RequestMessage): String =
     val capabilities = ServerCapabilities()
     val result = InitializeResult(
       capabilities,
       ServerInfo("lsp-zoomba", "0.1.0")
     )
-    result
+    result.toString
