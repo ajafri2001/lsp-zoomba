@@ -13,3 +13,5 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-generic",
   "io.circe" %% "circe-parser"
 ).map(_ % circeVersion)
+
+libraryDependencies += "com.lihaoyi" %% "upickle" % "4.0.2"
