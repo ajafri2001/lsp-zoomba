@@ -15,7 +15,7 @@ case class ServerCapabilities(
 
 case class ServerInfo(name: String, version: String)
 
-def initialize(message: RequestMessage): LSPAny =
+def initialize(message: RequestMessage): LSPAny.LSPObject =
     val capabilities = ServerCapabilities()
     val result = InitializeResult(
       capabilities,
