@@ -48,4 +48,4 @@ object Main:
                 .flatMap(_.as[RequestMessage])
                 .getOrElse(RequestMessage(id = 0, method = "", params = None))
 
-        Respond.respond(1, initialize(message))
+        Respond.respond(message.id, initialize(message))
