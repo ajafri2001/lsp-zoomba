@@ -7,4 +7,5 @@ project/target/
 .bsp/
 .metals/
 *metals.sbt
+.vscode/
 
