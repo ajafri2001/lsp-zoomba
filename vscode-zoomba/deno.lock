@@ -5,8 +5,10 @@
     "jsr:@std/fs@^1.0.9": "1.0.9",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@std/path@^1.0.8": "1.0.8",
+    "npm:@types/vscode@^1.96.0": "1.96.0",
+    "npm:vscode-languageclient@*": "9.0.1",
     "npm:vscode-languageclient@^9.0.1": "9.0.1",
-    "npm:vscode@^1.1.37": "1.1.37"
+    "npm:vscode@*": "1.1.37"
   },
   "jsr": {
     "@std/assert@1.0.10": {
@@ -31,6 +33,9 @@
   "npm": {
     "@tootallnate/once@1.1.2": {
       "integrity": "sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw=="
+    },
+    "@types/vscode@1.96.0": {
+      "integrity": "sha512-qvZbSZo+K4ZYmmDuaodMbAa67Pl6VDQzLKFka6rq+3WUTY4Kro7Bwoi0CuZLO/wema0ygcmpwow7zZfPJTs5jg=="
     },
     "agent-base@4.3.0": {
       "integrity": "sha512-salcGninV0nPrwpGNn4VTXBb1SOuXQBiqbrNXoeizJsHrsL6ERFM2Ne3JUSBWRE6aeNJI2ROP/WEEIDUiDe3cg==",
@@ -301,8 +306,8 @@
       "jsr:@std/assert@1",
       "jsr:@std/fs@^1.0.9",
       "jsr:@std/path@^1.0.8",
-      "npm:vscode-languageclient@^9.0.1",
-      "npm:vscode@^1.1.37"
+      "npm:@types/vscode@^1.96.0",
+      "npm:vscode-languageclient@^9.0.1"
     ]
   }
 }

@@ -1,12 +1,12 @@
 {
     "tasks": {
-        "dev": "deno run --watch main.ts"
+        "dev": "deno run --watch src/extension.ts"
     },
     "imports": {
         "@std/assert": "jsr:@std/assert@1",
         "@std/fs": "jsr:@std/fs@^1.0.9",
         "@std/path": "jsr:@std/path@^1.0.8",
-        "vscode": "npm:vscode@^1.1.37",
+        "@types/vscode": "npm:@types/vscode@^1.96.0",
         "vscode-languageclient": "npm:vscode-languageclient@^9.0.1"
     },
     "fmt": {
